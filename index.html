@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro e Lays</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('img/bg.jpg'); /* Define a imagem de fundo */
+            background-size: cover; /* Redimensiona a imagem para cobrir toda a tela */
+            background-repeat: no-repeat; /* Impede a repetição da imagem */
+            background-attachment: fixed; /* Mantém a imagem fixa */
+            opacity: 0.9; /* Define a opacidade da imagem de fundo */
+        }
+
+        .nomes-image {
+            width: 100%; /* Largura total da div pai (body) */
+            max-width: 800px; /* Largura máxima da imagem */
+        }
+
+        .icon-button-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Duas colunas em dispositivos móveis */
+            grid-gap: 15px; /* Espaçamento entre os botões */
+        }
+
+        .icon-button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 200px; /* Largura fixa para todos os botões */
+            height: 200px; /* Altura fixa para todos os botões */
+            margin: 15px;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            background-color: #233219;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0px 12px 16px rgba(0, 0, 0, 0.658);
+        }
+
+        .icon-button i {
+            font-size: 4rem; /* Ícone maior */
+            margin-bottom: 10px;
+        }
+
+        .icon-button span {
+            font-size: 1.5rem;
+            white-space: normal; /* Permite a quebra de linha */
+        }
+
+        .icon-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 24px 32px rgba(0, 0, 0, 0.658); /* Aumenta a sombra nos botões quando hover */
+        }
+
+        /* Media query para dispositivos largos (computadores) */
+        @media screen and (min-width: 768px) {
+            .icon-button-container {
+                grid-template-columns: repeat(4, 1fr); /* Quatro colunas em dispositivos largos */
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="img/nomes.png" alt="Nomes" class="nomes-image">
+    <div class="icon-button-container">
+        <button class="icon-button">
+            <i class="fas fa-utensils"></i>
+            <span>Utensílios de Cozinha</span>
+        </button>
+        <button class="icon-button">
+            <i class="fas fa-plug"></i>
+            <span>Eletrodomésticos</span>
+        </button>
+        <button class="icon-button">
+            <i class="fas fa-couch"></i>
+            <span>Móveis e Eletrodomésticos Grandes</span>
+        </button>
+        <button class="icon-button">
+            <i class="fab fa-pix"></i>
+            <span>PIX</span>
+        </button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utensílios de Cozinha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            color:#fff;
+            font-family: "Arial";
+            margin: 0;
+            padding: 0;
+            background-image: url('img/bg.jpg'); /* Caminho correto para a imagem de fundo */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            opacity: 0.9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column; /* Alinhar elementos verticalmente */
+        }
+
+        .table-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #233219; /* Cor inicial */
+            transition: background-color 0.5s; /* Transição de cor */
+            width: 80%;
+            max-width: 800px;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.432); /* Adiciona sombra à tabela */
+        }
+
+        .table-title i {
+            margin-right: 10px; /* Espaçamento entre o ícone e o texto */
+            font-size: 2rem; /* Tamanho maior */
+            color: #fff; /* Cor branca */
+        }
+
+        .table-title span {
+            font-size: 1.5rem; /* Tamanho maior */
+            text-transform: uppercase; /* Converte texto para caixa alta */
+            color: #fff; /* Cor branca */
+    
+        }
+
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            max-width: 800px;
+            background-color: rgba(255, 255, 255, 0.7); /* Cor de fundo com transparência */
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3); /* Adiciona sombra à tabela */
+            text-transform: uppercase; /* Converte texto para caixa alta */
+            margin: 0 20px 20px 20px; /* Adiciona margens à tabela para destacá-la */
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            color: #fff;
+        }
+
+        th {
+            background-color: #fff;
+            color: #000; /* Cor do texto para títulos */
+            text-align: center; /* Alinha o título "Item" ao centro */
+        }
+
+        td:nth-child(2) {
+            text-align: left; /* Alinha o texto da coluna "Item" à esquerda */
+        }
+
+        tr:nth-child(even) {
+            background-color: #233219; /* Cor de fundo alternada para linhas pares */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #58684d; /* Cor de fundo alternada para linhas ímpares */
+        }
+
+        .ok {
+            opacity: 0.5; /* Define a opacidade para linhas com "Ok" */
+        }
+
+        .ok td:nth-child(2) {
+            text-decoration: line-through; /* Riscar o texto da coluna "Item" */
+            color: #000; /* Defina a cor do texto como preto para melhor visibilidade */
+        }
+    </style>
+</head>
+<body>
+    <div class="table-title" style="background-color: rgba(35, 50, 25, calc(0.7 * (100% - 40px) / 800px));">
+        <i class="fas fa-plug"></i> <h1>Eletrodomésticos</h1>
+    </div>
+
+    <table>
+        <tr>
+            <th>Ok</th>
+            <th>Item</th>
+            <th>Cor</th>
+        </tr>
+        <!-- Dados da planilha serão inseridos aqui dinamicamente -->
+    </table>
+
+    <script>
+        // Função para processar o arquivo CSV (mantenha-a da maneira que você preferir)
+        function processCSV(csvData) {
+            const rows = csvData.split("\n");
+            const table = document.querySelector("table");
+
+            for (let i = 1; i < rows.length; i++) {
+                const rowData = rows[i].split(",");
+                const tr = document.createElement("tr");
+                tr.innerHTML = `
+                    <td>${rowData[0]}</td>
+                    <td>${rowData[1]}</td>
+                    <td>${rowData[2]}</td>
+                `;
+
+                if (rowData[0].trim() === "Ok") {
+                    tr.classList.add("ok"); // Adiciona a classe "ok" às linhas "Ok"
+                }
+
+                table.appendChild(tr);
+            }
+        }
+
+        // Conteúdo do arquivo CSV (substitua pelo conteúdo real do seu arquivo)
+        const csvContent = `
+        ,Aspirador de pó,Preto
+        ,Forno elétrico,Preto
+        ,Climatizador de ar,
+        ,Filtro de água,
+        Ok,Geladeira,
+        ,Lavadora de roupa,
+        ,Micro-ondas,
+        ,Lavadora de louças,
+        ,Freezer,
+        ,Juicer,
+        ,Máquina de pão,`;
+
+        // Processa o conteúdo do CSV
+        processCSV(csvContent);
+    </script>
+</body>
+</html>

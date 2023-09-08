@@ -12,6 +12,7 @@
             align-items: center;
             justify-content: center;
             margin: 0;
+            min-height: 100vh; /* Garante que o corpo ocupe pelo menos a altura da viewport */
             background-image: url('img/bg.jpg'); /* Define a imagem de fundo */
             background-size: cover; /* Redimensiona a imagem para cobrir toda a tela */
             background-repeat: no-repeat; /* Impede a repetição da imagem */
@@ -27,7 +28,8 @@
         .icon-button-container {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Duas colunas em dispositivos móveis */
-    
+            grid-gap: 8px; /* Espaçamento entre os botões */
+            margin-top: 8px; /* Espaçamento acima dos botões */
         }
 
         .icon-button {
@@ -36,8 +38,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-          
-            margin: 5px;
+            width: 170px; /* Largura fixa para todos os botões */
+            height: 170px; /* Altura fixa para todos os botões */
             padding: 10px;
             border: none;
             border-radius: 8px;

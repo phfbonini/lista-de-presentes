@@ -116,7 +116,7 @@
         <tr>
             <th>Ok</th>
             <th>Item</th>
-            <th>Cor</th>
+            
         </tr>
         <!-- Dados da planilha serão inseridos aqui dinamicamente -->
     </table>
@@ -135,7 +135,7 @@
                 tr.innerHTML = `
                     <td>${rowData[0]}</td>
                     <td>${rowData[1]}</td>
-                    <td>${rowData[2]}</td>
+                    
                 `;
 
                 if (rowData[0].trim() === "Ok") {
@@ -148,45 +148,25 @@
 
         // Conteúdo do arquivo CSV (substitua pelo conteúdo real do seu arquivo)
         const csvContent = `
-        ,Faqueiro (jogo de talheres), Prata
-        ,Jogo de panelas,-
-        ,Jogo de formas e assadeiras,-
-        Ok,Chaleira,-
-        ,Jogo de copos (dia a dia),-
-        ,Jogo de taças,-
-        ,Bule e leiteira,-
-        Ok,Garrafa térmica,-
-        ,Balança para cozinha,-
-        ,Jogo de facas,-
-        ,Passadeira a vapor,-
-        Ok,Liquidificador,Preto
-        ,Batedeira,Preto
-        ,Mixer de alimentos,Preto
-        ,Panela elétrica (arroz),Preto
-        ,Panela elétrica (feijão),Preto
-        Ok,Sanduicheira elétrica,Preto
-        ,Grill,-
-        Ok,Air fryer,Preto
-        ,Conjunto de medidores,-
-        ,Conjunto de potes para organização,-
-        ,Torneira elétrica,-
-        ,Coifa,-
-        Ok,Torradeira / sanduicheira,-
-        ,Microondas,Preto
-        ,Processador de alimentos,-
-        ,Batedeira,-
-        ,Espremedor de frutas,Preto
-        ,Aparelho de café e chá,-
-        ,Cafeteira,-
-        ,Jarra,-
-        ,Petisqueira,-
-        ,Portacondimentos / temperos,-
-        ,Portaguardanapos,-
-        ,Saladeira,-
-        ,Apoio para copos,-
-        ,Jogo de utensílios e espátulas,-
-        ,Jogo de lugar americano,-
-        ,Tábua de passar,-`;
+        , Faqueiro (jogo de talheres), -
+        , Jogo de panelas, -
+        , Jogo de formas e assadeiras, -
+        Ok, Chaleira, -
+        , Jogo de copos (dia a dia), -
+        , Jogo de taças, -
+        , Bule e leiteira, -
+        Ok, Garrafa térmica, -
+        , Jogo de facas, -
+        , Tábua frios ou carne, -
+        , Aparelho de café e chá, -
+        , Jogo de sobremesa, -
+        , Conjunto para bolo (prato e espátula), -
+        , Jarra, -
+        , Petisqueira, -
+        , Apoio para copos, -
+        , Jogo de utensílios e espátulas, -
+        , Conjunto de potes para organização, -
+        , Jogo de lugar americano, -`;
 
         // Processa o conteúdo do CSV
         processCSV(csvContent);

@@ -109,14 +109,14 @@
 </head>
 <body>
     <div class="table-title">
-        <i class="fas fa-couch" style="font-size: 2.5rem;"></i> <span style="font-size: 1.5rem;">Móveis e Eletrod. Grandes</span>
+        <i class="fas fa-couch" style="font-size: 2.5rem;"></i> <span style="font-size: 1.5rem;">Móveis</span>
     </div>
 
     <table>
         <tr>
             <th>Ok</th>
             <th>Item</th>
-            <th>Cor</th>
+            
         </tr>
         <!-- Dados da planilha serão inseridos aqui dinamicamente -->
     </table>
@@ -135,7 +135,6 @@
                 tr.innerHTML = `
                     <td>${rowData[0]}</td>
                     <td>${rowData[1]}</td>
-                    <td>${rowData[2]}</td>
                 `;
 
                 if (rowData[0].trim() === "Ok") {
@@ -148,15 +147,12 @@
 
         // Conteúdo do arquivo CSV (substitua pelo conteúdo real do seu arquivo)
         const csvContent = `
-        ,Sofá retrátil para sala,-,
-        ,Armário para cozinha,-,
-        ,Mesa de jantar,-,
-        ,Painel para sala,-,
-        Ok,Fogão,-,
-        ,Pia para cozinha,-,
-        ,TV,-,
-        ,Cama de casal,-,
-        ,Guarda-roupas,-,`;
+        , Sofá para sala, -
+        , Armário para cozinha, -
+        , Mesa de jantar, -
+        , Painel para sala, -
+        , Cama de casal, -
+        , Guarda-roupas, -`;
 
         // Processa o conteúdo do CSV
         processCSV(csvContent);

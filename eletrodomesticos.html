@@ -116,7 +116,7 @@
         <tr>
             <th>Ok</th>
             <th>Item</th>
-            <th>Cor</th>
+            
         </tr>
         <!-- Dados da planilha serão inseridos aqui dinamicamente -->
     </table>
@@ -135,7 +135,6 @@
                 tr.innerHTML = `
                     <td>${rowData[0]}</td>
                     <td>${rowData[1]}</td>
-                    <td>${rowData[2]}</td>
                 `;
 
                 if (rowData[0].trim() === "Ok") {
@@ -148,17 +147,29 @@
 
         // Conteúdo do arquivo CSV (substitua pelo conteúdo real do seu arquivo)
         const csvContent = `
-        ,Aspirador de pó,Preto
-        ,Forno elétrico,Preto
-        ,Climatizador de ar,
-        ,Filtro de água,
-        Ok,Geladeira,
-        ,Lavadora de roupa,
-        ,Micro-ondas,
-        ,Lavadora de louças,
-        ,Freezer,
-        ,Juicer,
-        ,Máquina de pão,`;
+        Ok, Fogão, -
+        , Pia para cozinha, -
+        Ok, TV, -
+        , Aspirador de pó, -
+        , Forno elétrico, -
+        , Climatizador de ar, -
+        , Filtro de água, -
+        Ok, Geladeira, -
+        , Lavadora de roupa, -
+        Ok, Micro-ondas, -
+        , Lavadora de louças, -
+        , Freezer, -
+        , Grill elétrico, -
+        , Panela elétrica (arroz), -
+        , Panela elétrica (feijão), -
+        Ok, Sanduicheira elétrica, -
+        Ok, Air fryer, -
+        Ok, Liquidificador, -
+        , Processador de alimentos, -
+        , Batedeira, -
+        , Espremedor de frutas, -
+        , Cafeteira, -
+        , Mixer de alimentos, -`;
 
         // Processa o conteúdo do CSV
         processCSV(csvContent);
